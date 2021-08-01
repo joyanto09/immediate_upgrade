@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="jb_inherit_module_view_kanban" model="ir.ui.view">
+        <field name="name">jb.inherit.module.kanban.base</field>
+        <field name="model">ir.module.module</field>
+        <field name="inherit_id" ref="base.module_view_kanban"/>
+        <field name="arch" type="xml">
+            <!--upgrade button-->
+            <xpath expr="//div[hasclass('oe_module_action')]" position="inside" groups="jb_immediate_upgrade.group_show_quick_upgrade">
+                <button type="object" class="btn btn-default btn-sm float-right" name="button_uninstall_wizard" states="installed">Uninstall</button>
+                <button type="object" class="btn btn-success btn-sm float-right" name="button_immediate_upgrade" states="installed">Upgrade</button>
+            </xpath>
+        </field>
+    </record>
+</odoo>
